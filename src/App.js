@@ -1,7 +1,12 @@
+import Pad from './Pad';
+import Screen from './Screen';
 function App() {
   return (
     <div className="App">
-      hi
+      <div id="ipod">
+        <Screen/>
+        <Pad/>
+      </div>
     </div>
   );
 }
