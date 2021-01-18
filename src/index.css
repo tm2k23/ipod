@@ -25,10 +25,11 @@ body {
   align-items: center;
 }
 #screen {
-  background-color: rgb(95, 95, 204);
-  border: 4px solid rgb(100, 61, 61);
+  /* background-color: rgb(95, 95, 204); */
+  border: 4px solid black;
   height: 50%;
   width: 90%;
+  border-radius: 10px;
 }
 #pad {
   height: 200px;
@@ -64,4 +65,15 @@ body {
 }
 #playpause i {
   font-size: 1.1rem;
+}
+.screenContentDiv{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.screenHeader{
+  height: 20px;
+  width: 100%;
+  background-image: linear-gradient(rgb(199, 184, 184),rgb(114, 101, 101));
+  border-radius: 10px 10px 0 0 ;
 }

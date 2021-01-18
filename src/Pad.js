@@ -6,19 +6,19 @@ class Pad extends React.Component {
         return (
             <div id="pad">
                 <div className="padButton" id="menu" style={{ fontWeight: 'bolder' }}>
-                    <i class="fas fa-bars"></i>
+                    <i className="fas fa-bars"></i>
                 </div>
                 <div id="midRow">
                     <div className="padButton" id="backward" style={{ marginRight: 12 }}>
-                        <i class="fas fa-fast-backward"></i>
+                        <i className="fas fa-fast-backward"></i>
                     </div>
                     <div id="mid"></div>
                     <div className="padButton" id="forward" style={{ marginLeft: 12 }}>
-                        <i class="fas fa-fast-forward"></i>
+                        <i className="fas fa-fast-forward"></i>
                     </div>
                 </div>
                 <div className="padButton" id="playpause">
-                    <i class="fas fa-play"></i><i class="fas fa-pause"></i>
+                    <i className="fas fa-play"></i><i class="fas fa-pause"></i>
                 </div>
             </div>
         )
@@ -27,7 +27,6 @@ class Pad extends React.Component {
 
 // var touchArea = document.getElementById("pad");
 // var myRegion = new ZingTouch.Region(touchArea);
-
 // myRegion.bind(touchArea, 'rotate', function(event) {
 //     console.log(event);
 // });

@@ -1,0 +1,37 @@
+#home{
+    background-image: url('./home-background.jpeg');
+    background-size: cover;
+   
+}
+.menuDiv{
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+    /* box-shadow: 10px 0px 20px 3px black; */
+}
+.menuHeader{
+    background-image: linear-gradient(rgb(199, 184, 184),rgb(114, 101, 101));
+    padding: 5px;
+    border-radius: 10px 0 0 0;
+}
+.ipod-icon{
+    color: black;
+    margin-left: 10px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+.battery{
+    color: yellow;
+    float: right;
+    margin-right: 10px;
+}
+.menuList ul{
+    list-style: none;
+    padding: 0;
+    color: rgb(16, 136, 136);
+}
+.menuList ul li{
+    padding: 7px 0 7px 15px ;
+    font-size: 17px;
+}
