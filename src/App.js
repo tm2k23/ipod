@@ -7,26 +7,52 @@ class App extends React.Component {
     super();
     this.state={
       activeScreen:'home',
-      activeItem:'nowPlaying'
+      activeItem:'nowPlaying',
+      activeMusicItem:'allSongs'
     }
   }
+  homeMenu = ['nowPlaying', 'music', 'games', 'settings'];
+  musicMenu = ['allSongs','artists','albums'];
   changeActiveItem=(itemToSet)=>{
-    console.log('change active item called and is set to ',itemToSet);
-    this.setState({
-      activeItem:itemToSet
-    })
+    if(this.state.activeScreen==='home'   ){
+      console.log('change active item called and is set to ',itemToSet);
+      this.setState({
+        activeItem:itemToSet
+      })
+    }
+    if(this.state.activeScreen==='music'){
+      console.log('change active music item called and is set to ',itemToSet);
+      this.setState({
+        activeMusicItem:itemToSet
+      })
+    }
   }
   setActiveScreen=(screenToSet)=>{
     // console.log(screenToSet);
     // console.log(this.state.activeItem);
-    this.setState({
-      activeScreen:this.state.activeItem
-    })
+    if(this.state.activeScreen==='home'  ){
+      console.log('new active screen set');
+      this.setState({
+        activeScreen:this.state.activeItem
+      })
+    }
+    if(this.state.activeScreen==='music'){
+      console.log('new active screen set');
+      this.setState({
+        activeScreen:this.state.activeMusicItem
+      })
+    }
   }
-  setHomePage=()=>{
-    this.setState({
-      activeScreen:'home'
-    })
+  setMenuPage=()=>{
+    if(this.musicMenu.includes(this.state.activeScreen)){
+      this.setState({
+        activeScreen:'music'
+      })
+    }else{
+      this.setState({
+        activeScreen:'home'
+      })
+    }
   }
   render(){
     return (
@@ -35,10 +61,12 @@ class App extends React.Component {
           <Screen 
             activeScreen={this.state.activeScreen}
             activeItem={this.state.activeItem}
+            activeMusicItem={this.state.activeMusicItem}
+            // setActiveScreen={this.setActiveScreen}
           />
           <Pad 
             activeScreen={this.state.activeScreen}
-            setHomePage={this.setHomePage}
+            setMenuPage={this.setMenuPage}
             changeActiveItem={this.changeActiveItem} 
             setActiveScreen={this.setActiveScreen}
           />

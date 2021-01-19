@@ -16,6 +16,7 @@ class Pad extends React.Component {
     //     }
     // }
     homeMenu = ['nowPlaying', 'music', 'games', 'settings'];
+    musicMenu = ['allSongs','artists','albums'];
     rotate=()=>{
         const touchArea = document.getElementById("pad");
         const myRegion = new ZingTouch.Region(touchArea);
@@ -31,18 +32,33 @@ class Pad extends React.Component {
             if(distanceFromLast>0){
                 if(changeInAngle>15){
                     activeMenuIndex++;
-                    activeMenuIndex=(activeMenuIndex>3)?0:activeMenuIndex;
-                    console.log('angle changed by ',changeInAngle,' degree, change index to : ',activeMenuIndex);
-                    changeInAngle=0;
-                    self.props.changeActiveItem(self.homeMenu[activeMenuIndex])
+                    if(self.props.activeScreen === "home")
+                    {
+                        // console.log(self.props.activeScreen);
+                        activeMenuIndex=(activeMenuIndex>3)?0:activeMenuIndex;
+                        // console.log('angle changed by ',changeInAngle,' degree, change index to : ',activeMenuIndex);
+                        changeInAngle=0;
+                        self.props.changeActiveItem(self.homeMenu[activeMenuIndex])
+                    }else{
+                        activeMenuIndex=(activeMenuIndex>2)?0:activeMenuIndex;
+                        changeInAngle=0;
+                        self.props.changeActiveItem(self.musicMenu[activeMenuIndex]);
+                    }
                 }
             }else{
                 if(changeInAngle>15){
                     activeMenuIndex--;
-                    activeMenuIndex=(activeMenuIndex<0)?3:activeMenuIndex;
-                    console.log('angle changed by ',changeInAngle,' degree, change index to : ',activeMenuIndex);
-                    changeInAngle=0;
-                    self.props.changeActiveItem(self.homeMenu[activeMenuIndex])
+                    if(self.props.activeScreen === "home")
+                    {
+                        activeMenuIndex=(activeMenuIndex<0)?3:activeMenuIndex;
+                        // console.log('angle changed by ',changeInAngle,' degree, change index to : ',activeMenuIndex);
+                        changeInAngle=0;
+                        self.props.changeActiveItem(self.homeMenu[activeMenuIndex]);
+                    }else{
+                        activeMenuIndex=(activeMenuIndex<0)?2:activeMenuIndex;
+                        changeInAngle=0;
+                        self.props.changeActiveItem(self.musicMenu[activeMenuIndex]);
+                    }
                 }
             }
         })
@@ -54,7 +70,7 @@ class Pad extends React.Component {
             <div id="pad">
                 <div className="padButton" id="menu"
                 style={{ fontWeight: 'bolder' }}
-                onClick={()=>{this.props.setHomePage()}} >
+                onClick={()=>{this.props.setMenuPage()}} >
                     <i className="fas fa-bars"></i>
                 </div>
                 <div id="midRow">
