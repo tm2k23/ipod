@@ -14,9 +14,9 @@ class Screen extends React.Component {
                 {this.props.activeScreen==='home' && <Home activeItem={this.props.activeItem}/> } 
                 {this.props.activeScreen==='games' && <Games/> } 
                 {this.props.activeScreen==='settings' && <Settings/> } 
-                {this.props.activeScreen==='nowPlaying' && <MusicPlayer/>}
+                {this.props.activeScreen==='nowPlaying' && <MusicPlayer setPlayerMounted={this.props.setPlayerMounted}/>}
                 {this.props.activeScreen==='music'&& <MusicMenu activeMusicItem={this.props.activeMusicItem}/>}
-                {this.props.activeScreen==='allSongs' && <MusicPlayer/>}
+                {this.props.activeScreen==='allSongs' && <MusicPlayer setPlayerMounted={this.props.setPlayerMounted}/>}
                 {this.props.activeScreen==='artists' && <Artists/>}
                 {this.props.activeScreen==='albums' && <Albums/>}
             </div>

@@ -63,9 +63,21 @@ class Pad extends React.Component {
             }
         })
     }
+    playPause=(song)=>{
+        if(this.props.isPlayerMounted == true){
+            console.log(song[0].paused);
+            if(song[0].paused==true){
+                song[0].play();    
+            }
+            else{
+                song[0].pause();
+            }
+        }
+    }
 
     render() {
         // console.log(this.props);
+        // console.log(document.getElementsByTagName('audio'));
         return (
             <div id="pad">
                 <div className="padButton" id="menu"
@@ -82,7 +94,7 @@ class Pad extends React.Component {
                         <i className="fas fa-fast-forward"></i>
                     </div>
                 </div>
-                <div className="padButton" id="playpause">
+                <div className="padButton" id="playpause" onClick={()=>{this.playPause(document.getElementsByTagName('audio'))}}>
                     <i className="fas fa-play"></i><i class="fas fa-pause"></i>
                 </div>
             </div>

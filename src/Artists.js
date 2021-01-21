@@ -10,7 +10,9 @@ class Artists extends React.Component{
                     <span className="ipod-icon">iPod</span>
                     <span className="battery"><i class="fas fa-battery-three-quarters"></i></span>
                 </div>
-                <h1>Artists Component</h1>
+                <div>
+                    <h1>Artists Component</h1>
+                </div>
             </div>
         )
     }

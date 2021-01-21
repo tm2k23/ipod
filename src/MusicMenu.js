@@ -7,7 +7,7 @@ class MusicMenu extends React.Component{
         // document.getElementById('allSomgs').classList.add('highlight');
     }
     render(){
-        console.log('home page is rendered with props : ',this.props);
+        // console.log('home page is rendered with props : ',this.props);
         return(
             <div id="home" className="screenContentDiv">
                 <div className="menuDiv">

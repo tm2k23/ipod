@@ -4,7 +4,7 @@ class Home extends React.Component{
         super();
     }
     render(){
-        console.log('home page is rendered with props : ',this.props);
+        // console.log('home page is rendered with props : ',this.props);
         return(
             <div id="home" className="screenContentDiv">
                 <div className="menuDiv">

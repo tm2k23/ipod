@@ -36,5 +36,6 @@
     font-size: 17px;
 }
 .highlight{
-    background-color:rgb(219, 219, 231)
+    background-color:rgb(82, 82, 184);
+    color:white !important;
 }
