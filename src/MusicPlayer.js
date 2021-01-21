@@ -2,13 +2,13 @@ import React from 'react';
 class MusicPlayer extends React.Component{
     constructor(){
         super();
-        
     }
     componentDidMount(){
         var self=this;
         var track = document.getElementsByTagName('audio')[0];
         this.props.setPlayerMounted();
         track.addEventListener('timeupdate',self.updateTrackTime);
+        document.getElementById('runner').style.width=(track.currentTime/track.duration)*100 + '%';
     }
     componentWillUnmount(){
         var self=this;
@@ -19,6 +19,7 @@ class MusicPlayer extends React.Component{
     }
     updateTrackTime=()=>{
         var track = document.getElementsByTagName('audio')[0];
+        document.getElementById('runner').style.width=(track.currentTime/track.duration)*100 + '%';
         console.log('time is getting updated ');
         var currTimeDiv = document.getElementById('currentTime');
         var durationDiv = document.getElementById('duration');
@@ -62,11 +63,12 @@ class MusicPlayer extends React.Component{
                         </div>
                     </div>
                 </div>
-                <span style={{marginLeft:'5px',color:"white"}} id="currentTime">00:00</span>
+                <br></br>
+                <div style={styles.currentTime} id="currentTime">00:00</div>
                 <div style={styles.base}>
-                    <div style={styles.runner}><i class="fas fa-circle" style={styles.runnerPointer}></i></div>
+                    <div style={styles.runner} id="runner"><i class="fas fa-circle" style={styles.runnerPointer}></i></div>
                 </div>
-                <span style={{color:"white"}} id="duration">{this.formatSecondsAsTime(document.getElementsByTagName('audio')[0].duration)}</span>
+                <div style={styles.duration} id="duration">{this.formatSecondsAsTime(document.getElementsByTagName('audio')[0].duration)}</div>
             </div>
         )
     }
@@ -91,28 +93,43 @@ const styles={
         color:"#62de65"
     },
     base:{
-        width:'70%',
+        width:'55%',
         height:'8px',
         backgroundColor:'#e0d7d0',
         // marginLeft:'12.5px',
         // display:'inline-block',
         position:'absolute',
         bottom:'45px',
-        left:'55px',
+        left:'75px',
         borderRadius:'20px'
     },
     runner:{
-        width:'50%',
         height:'100%',
         backgroundColor:'#58bb48',
-        borderRadius:'20px'
+        borderRadius:'20px',
     },
     runnerPointer:{
         float:'right',
         color:'#6ba1d8',
         fontSize:"1.5rem",
         marginTop:'-7px',
-        marginRight:'-10px'
+        marginRight:'-20px',
+        transition:"all 0s linear"
+    },
+    currentTime:{
+        display:'inline-block',
+        marginLeft:'25px',
+        color:"white",
+        marginTop:"14px",
+        fontSize:'0.9rem'
+    },
+    duration:{
+        display:'inline-block',
+        color:"white",
+        fontSize:'0.9rem',
+        float:'right',
+        marginTop:"14px",
+        marginRight:'25px'
     }
 }
 export default MusicPlayer;

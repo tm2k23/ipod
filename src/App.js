@@ -66,7 +66,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div id="ipod">
-          <audio controls >
+          <audio >
             <source src={song}></source>
           </audio>
           <Screen 
