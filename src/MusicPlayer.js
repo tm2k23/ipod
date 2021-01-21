@@ -64,7 +64,7 @@ class MusicPlayer extends React.Component{
                     </div>
                 </div>
                 <br></br>
-                <div style={styles.currentTime} id="currentTime">00:00</div>
+                <div style={styles.currentTime} id="currentTime">{this.formatSecondsAsTime(document.getElementsByTagName('audio')[0].currentTime)}</div>
                 <div style={styles.base}>
                     <div style={styles.runner} id="runner"><i class="fas fa-circle" style={styles.runnerPointer}></i></div>
                 </div>
