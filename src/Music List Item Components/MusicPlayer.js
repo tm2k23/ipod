@@ -1,8 +1,5 @@
 import React from 'react';
 class MusicPlayer extends React.Component{
-    constructor(){
-        super();
-    }
     componentDidMount(){
         var self=this;
         var track = document.getElementsByTagName('audio')[0];

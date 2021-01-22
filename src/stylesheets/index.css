@@ -60,10 +60,10 @@ body {
 .padButton {
   color: rgb(164, 164, 172);
 }
-.padButton i {
+.padButton {
   font-size: 1.5rem;
 }
-#playpause i {
+#playpause {
   font-size: 1.1rem;
 }
 .screenContentDiv{

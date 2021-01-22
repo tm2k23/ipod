@@ -1,7 +1,7 @@
 import Pad from './Pad'; // this is the pad component of ipod i.e. touch pad and buttons
 import Screen from './Screen'; // this is the screen component of the ipod 
 import React from 'react';
-import song from './onmyway.mp3';
+import song from './songs/onmyway.mp3';
 class App extends React.Component {
   constructor(){ // constructor of App Class
     super(); // to call the constructor of React.Component

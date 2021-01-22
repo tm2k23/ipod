@@ -1,0 +1,14 @@
+#artistDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 93%;
+    width: 100%;
+    background-image: linear-gradient(rgb(136, 83, 83) , black);
+}
+#artistDiv img{
+    height:100px;
+    width:100px;
+}

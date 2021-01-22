@@ -1,16 +1,20 @@
 import React from 'react';
+
+/* below imports are to import all the screen components */
 import Home from './Home';
-import Settings from './Settings';
-import Games from './Games'
-import MusicPlayer from './MusicPlayer';
-import MusicMenu from './MusicMenu';
-import Artists from './Artists';
-import Albums from './Albums';
-class Screen extends React.Component {
+import Settings from './Home List Item Components/Settings';
+import Games from './Home List Item Components/Games'
+import MusicPlayer from './Music List Item Components/MusicPlayer';
+import MusicMenu from './Home List Item Components/MusicMenu';
+import Artists from './Music List Item Components/Artists';
+import Albums from './Music List Item Components/Albums';
+class Screen extends React.Component { // screen component class 
     render() {
-        // console.log(this.props);
         return (
             <div id="screen">
+                {/* below is the conditional rendering of the screen compontnts depending upon 
+                the value of activeScreen in state received here by props */}
+
                 {this.props.activeScreen==='home' && <Home activeItem={this.props.activeItem}/> } 
                 {this.props.activeScreen==='games' && <Games/> } 
                 {this.props.activeScreen==='settings' && <Settings/> } 

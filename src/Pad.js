@@ -1,24 +1,21 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import ZingTouch from 'zingtouch';
-class Pad extends React.Component {
+// zingtouch is the library to use the rotate touch event to travel through the menu items based upon the angle rotated
+import ZingTouch from 'zingtouch'; 
+class Pad extends React.Component { // Pad component class 
     componentDidMount() {
-        this.rotate();
+        this.rotate(); // this is to add event listener or to set up zingtouch once the Pad component is mounted 
     }
-    // componentDidUpdate(){
-    //     console.log(this.props.activeScreen);
-    //     if(this.props.activeScreen === "home")
-    //     { 
-    //         this.rotate(); 
-    //     }
-    //     else{
-    //         console.log('active screen is not home page');
-    //     }
-    // }
+
+    // keeping an array of items in menu,will be needed to traverse throught the list on rotate 
     homeMenu = ['nowPlaying', 'music', 'games', 'settings'];
     musicMenu = ['allSongs','artists','albums'];
+
+    /* this function is called onece the pad component is mounted */
     rotate=()=>{
         const touchArea = document.getElementById("pad");
+
+        
         const myRegion = new ZingTouch.Region(touchArea);
         var activeMenuIndex=0;
         var changeInAngle=0;
@@ -27,7 +24,6 @@ class Pad extends React.Component {
             // console.log(event.detail);
             changeInAngle++;
             var distanceFromLast=event.detail.distanceFromLast;
-            var angle=event.detail.angle;
             // console.log('distance : ',distanceFromLast," angle : ",angle);
             if(distanceFromLast>0){
                 if(changeInAngle>15){
@@ -64,9 +60,9 @@ class Pad extends React.Component {
         })
     }
     playPause=(song)=>{
-        if(this.props.isPlayerMounted == true){
+        if(this.props.isPlayerMounted === true){
             console.log(song[0].paused);
-            if(song[0].paused==true){
+            if(song[0].paused===true){
                 song[0].play();    
             }
             else{
@@ -76,8 +72,6 @@ class Pad extends React.Component {
     }
 
     render() {
-        // console.log(this.props);
-        // console.log(document.getElementsByTagName('audio'));
         return (
             <div id="pad">
                 <div className="padButton" id="menu"
