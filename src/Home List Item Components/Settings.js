@@ -1,18 +1,21 @@
-import React from 'react';
+
 const Settings=(props)=>{
     return(
         <div className="screenContentDiv">
             <div className="screenHeader">
+                {/* screen header div */}
                 <span className="ipod-icon">iPod</span>
                 <span className="battery"><i class="fas fa-battery-three-quarters"></i></span>
             </div>
             <div style={styles.settingBody}>
+                {/* this is the settings div and just contains one font awesone icon */}
                 <i class="fas fa-cog"></i>
             </div>
         </div>
     )
 }
 const styles={
+    // stying of Settings Component
     settingBody:{
         display:'flex',
         justifyContent:'center',
@@ -26,4 +29,4 @@ const styles={
         color:'#ccf0cd'
     }
 }
-export default Settings;
+export default Settings; // export the component
