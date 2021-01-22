@@ -37,7 +37,7 @@ class App extends React.Component {
 
   /* this function is to change set the active screen, active screen is controlled by pad components middle button
   so it is passed as props to the pad component and is called when the middle button is clicked */
-  setActiveScreen=(screenToSet)=>{
+  setActiveScreen=()=>{
     // if the active screen is home screen then activeScreen is going to be the one from the list on home menu
     if(this.state.activeScreen==='home'  ){
       this.setState({
