@@ -1,7 +1,7 @@
 // Home functional component
 const Home = (props) => {
-    return(
-        <div id="home" className="screenContentDiv" style={{backgroundImage: 'url(home-background.jpeg)'}}>
+    return (
+        <div id="home" className="screenContentDiv" style={{ backgroundImage: 'url(home-background.jpeg)' }}>
             {/* this is the main home div */}
             <div className="menuDiv">
                 {/* this is the menu div */}
@@ -14,17 +14,17 @@ const Home = (props) => {
                     {/* this div in the menu list div and containg the kist of items */}
                     <ul>
                         <li id="nowPlaying"
-                            className={(props.activeItem=="nowPlaying")?"highlight":''}
-                            // class is added to highlight it only if it is the active item
+                            className={(props.activeItem === "nowPlaying") ? "highlight" : ''}
+                        // class is added to highlight it only if it is the active item
                         >Now Playing</li>
                         <li id="music"
-                            className={(props.activeItem=="music")?"highlight":''}
+                            className={(props.activeItem === "music") ? "highlight" : ''}
                         >Music</li>
                         <li id="games"
-                            className={(props.activeItem=="games")?"highlight":''}
+                            className={(props.activeItem === "games") ? "highlight" : ''}
                         >Games</li>
                         <li id="settings"
-                            className={(props.activeItem=="settings")?"highlight":''}
+                            className={(props.activeItem === "settings") ? "highlight" : ''}
                         >Settings</li>
                     </ul>
                 </div>
