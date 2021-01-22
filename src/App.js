@@ -1,5 +1,5 @@
-import Pad from './Pad'; // this is the pad component of ipod i.e. touch pad and buttons
-import Screen from './Screen'; // this is the screen component of the ipod 
+import Pad from './App Sub Components/Pad'; // this is the pad component of ipod i.e. touch pad and buttons
+import Screen from './App Sub Components/Screen'; // this is the screen component of the ipod 
 import React from 'react';
 import song from './songs/onmyway.mp3';
 class App extends React.Component {

@@ -6,7 +6,7 @@ class Home extends React.Component{
     render(){
         // console.log('home page is rendered with props : ',this.props);
         return(
-            <div id="home" className="screenContentDiv">
+            <div id="home" className="screenContentDiv" style={{backgroundImage: 'url(home-background.jpeg)'}}>
                 <div className="menuDiv">
                     <div className="menuHeader">
                         <span className="ipod-icon">iPod</span>
