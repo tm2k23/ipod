@@ -1,14 +1,18 @@
-import React from 'react';
-import '../stylesheets/album.css';
+//  this is the Albums Component 
+
+import '../stylesheets/album.css'; // import the stylesheet
 const Albums = (props) => {
     return (
         <div className="screenContentDiv">
             <div className="screenHeader">
+                {/* this is the screen header as in all the components  */}
                 <span className="ipod-icon">iPod</span>
                 <span className="battery"><i class="fas fa-battery-three-quarters"></i></span>
             </div>
             <div className="albumContainer" style={{backgroundImage:'url(musicplayerbackground.jpeg)'}}>
+                {/* this is the album container with the display as flex */}
                 <div>
+                    {/* a div a particular album, contains  an image and the name of the album */}
                     <img src="https://img.wynk.in/unsafe/180x180/filters:no_upscale():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_timewarner/music/1486404000/srch_timewarner_A10302B0003844206J.jpg"></img>
                     <br></br>÷(Deluxe)
                 </div>
@@ -37,4 +41,4 @@ const Albums = (props) => {
         </div>
     )
 }
-export default Albums;
+export default Albums; // export the album component
