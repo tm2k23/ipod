@@ -1,3 +1,5 @@
+//  this is the games component
+
 const Games=(props)=>{
     return(
         <div className="screenContentDiv">
@@ -12,7 +14,6 @@ const Games=(props)=>{
             </div>
         </div>
     )
-    
 }
 const styles={ 
     // stylings of Games Component 

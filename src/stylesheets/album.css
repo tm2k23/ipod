@@ -1,12 +1,10 @@
 .albumContainer{
     display: flex;
-    /* background-color: chocolate; */
     flex-wrap: wrap;
     height: 93%;
     width: 100%;
     border-radius: 0 0 5px 5px;
     justify-content: space-evenly;
-   
 }
 .albumContainer div {
     height:80px;
