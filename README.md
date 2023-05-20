@@ -2,7 +2,11 @@
 ## [Live Link](https://react-ipod.netlify.app/)
 
 React iPod is a web application that provides an iPod-like experience using ReactJS. It allows users to play music, play games, and navigate through a list using gesture recognition.
-![Ipod](preview.gif)
+<p align="center">
+  <a href="https://react-ipod.netlify.app/">
+    <img src="preview.gif" alt="preview">
+  </a>
+</p>
 
 ## Features
 
